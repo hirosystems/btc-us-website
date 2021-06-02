@@ -95,8 +95,11 @@
 	<div>
 		<PromoBanner/>
 		<h1>{$t('page.index.heading')}</h1>
-		<DomainSearchField small={$width_705} on:submit={result => result.detail.available && goto('/get/'+result.detail.name+'.btc')}/>
-		<p>{@html $t('page.index.sub_heading')}</p>
+		{#if 0}
+			<DomainSearchField small={$width_705} on:submit={result => result.detail.available && goto('/get/'+result.detail.name+'.btc')}/>
+			<p>{@html $t('page.index.sub_heading')}</p>
+		{/if}
+		<p>Thanks for your interest in registering a .btc domain - we're quickly working on a few improvements to make your experience faster and smoother and we'll be back online within a few hours!</p>
 	</div>
 </header>
 <article>

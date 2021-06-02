@@ -25,7 +25,7 @@
 		domain_name += `.${DOMAIN_NAMESPACE}`;
 	
 	let step = 0;
-	let payment_method = 'btc';
+	let payment_method = 'stx';
 	let purchase_status;
 	let transactions_pending, transactions_failed, transactions_succeeded;
 	
@@ -318,7 +318,7 @@
 				<p>{$t('page.get.select_payment_method')}</p>
 			</div>
 			<div class="payment_methods">
-				{#each Object.keys(payment_options) as option}
+				{#each Object.keys(payment_options).filter(option => option === 'stx') as option}
 					<label class="{option}" class:selected={payment_method === option}>
 						<input type="radio" bind:group={payment_method} value={option}/>
 						{$t(`components.${option}`)}
