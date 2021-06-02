@@ -89,6 +89,18 @@
 				"answer": ".BTC names are registered by sending a transaction to the BNS smart contract on the Stacks chain. BNS is the “Blockchain Name System”, a decentralised name registration app that can be compared to its Ethereum counterpart ENS. Once the transaction has gone through it will be finalized on Bitcoin. It means that .BTC names are fundamentally under your control and resistant to seizure or censorship."
 				},
 				{
+				"question": "How many domains can I get?",
+				"answer": "That depends on how deep your pockets are! However, there is a limit of one domain name per account. This is a technical limitation. If you somehow managed to purchase a name multiple times (by having multiple tabs open, for example) and are experiencing issues, then take a look at the FAQ below."
+				},
+				{
+				"question": "I tried to purchase multiple domains with USD or BTC on the same account but only got one, what do I do?",
+				"answer": "You can only own one domain per account, which means that later purchases will fail. If you used USD you should be refunded automatically, which may take up to a day. If you used BTC please contact us with details and we can initiate a refund."
+				},
+				{
+				"question": "I tried to purchase multiple domains with STX but only got one and the other registration failed, what do I do?",
+				"answer": "It is possible that you sent multiple preorders via the wallet while your name registration was pending. If this happens, then the later registrations will fail because you can only own one domain name per account. You can transfer the domain to a new account and then go back and complete the purchase for the second name. Enter it again in the search bar and it will give you the option to send the register transaction."
+				},
+				{
 				"question": "What are the benefits to using a .BTC name?",
 				"answer": "For starters, registering automatically gives you access to BTC and STX wallets. Names can be used to login to decentralized apps. You can redirect name.btc.us to your website. In the future, there can be better support for .btc resolution in browsers."
 				},
