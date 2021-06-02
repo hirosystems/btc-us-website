@@ -27,7 +27,7 @@
 	import ConfirmButton from '../../components/confirmbutton.svelte';
 	import TransferDomainButton from '../../components/transferdomainbutton.svelte';
 	import TransactionsTable from '../../components/transactionstable.svelte';
-	
+
 	let domains_fetched = false;
 	let domains = writable([]);
 	let selected = null;
@@ -474,7 +474,7 @@
 					{#if low_balance}
 						<p class="low_balance">{@html $t('page.manage.low_balance')}</p>
 					{/if}
-					<p class="promo">Fly the Bitcoin flag by updating your Twitter display name to <strong>{selected}</strong>. <a target="_blank" href="https://twitter.com/settings/profile">Change now on Twitter</a>.</p>
+					<a href="https://twitter.com/Stacks/status/1400114990464606208" class="promo">Fly the Bitcoin flag by updating your Twitter display name to <strong>{selected}</strong> for a chance to win $1000 in BTC from the Stacks Foundation. Click here for more info.</a>
 					<table class="simple">
 						<tr>
 							<th>{$t('page.manage.status')}</th>

@@ -185,7 +185,7 @@ export async function start_stripe_session(domain_name,stx_address)
 	{
 	let result = await payment_api_call('new-stripe-session',{domain_name,stx_address,return_to:document.location.href});
 	if (result.error)
-		return console.error(result.error);
+		throw result;
 	let stripe = Stripe(process.env.STRIPE_PUBLIC_KEY);
 	let stripe_redirect = await stripe.redirectToCheckout({sessionId:result.session_id});
 	if (stripe_redirect.error)
@@ -197,7 +197,8 @@ export async function start_coinbase_session(domain_name,stx_address)
 	{
 	let result = await payment_api_call('new-coinbase-session',{domain_name,stx_address,return_to:document.location.href});
 	if (result.error)
-		return console.error(result.error);
+		throw result;
+		//return console.error(result.error);
 	document.location.href = result.session_url || `https://commerce.coinbase.com/charges/${result.session_id}`;
 	}
 

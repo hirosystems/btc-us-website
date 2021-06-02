@@ -58,6 +58,11 @@
 		catch (error)
 			{
 			console.error(error);
+			if (error && error.error === 8)
+				{
+				step = -2;
+				return;
+				}
 			alert('Something went wrong while processing your request, please try again later.'); //TODO- show better error on screen
 			step = 2;
 			return;
@@ -282,7 +287,10 @@
 </article>
 <article class="columns">
 	<section>
-		{#if step === -1}
+		{#if step === -2}
+			<p>{$t('page.get.already_processing')}</p>
+			<p><a href="/sign-out" class="button right" on:click|preventDefault={() => {sign_out();step = 1;}}>{$t('page.get.sign_out')}</a></p>
+		{:else if step === -1}
 			<p>{$t('page.get.already_associated')}</p>
 			<p><a href="/sign-out" class="button right" on:click|preventDefault={() => {sign_out();step = 1;}}>{$t('page.get.sign_out')}</a></p>
 		{:else if step === 0}
