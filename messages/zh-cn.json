@@ -1,0 +1,134 @@
+{
+	"title": {
+		"index": "btc.us",
+		"terms-privacy": "條款和政策",
+		"get": "獲得{domain_name}",
+		"manage": "我的域名",
+		"404": "不存在"
+	},
+	"nav": {
+		"faq": "常見問題",
+		"support": "技術支持",
+		"sign_in": "登入"	
+	},
+	"footer": {
+		"terms_privacy": "條款和政策",
+		"support": "技術支持"
+	},
+	"components": {
+		"domain_search_placeholder": "搜索你的新域名",
+		"domain_search_button": "獲取",
+		"domain_available": "Available for 2 STX (≈ {$domain_fiat_price}) / 5 years",
+		"domain_unavailable": "不能獲得的",
+		"domain_reserved": "已預訂，繼續創建",
+		"domain_too_short": "名稱太短",
+		"email_notify_placeholder": "郵箱地址",
+		"email_notify_button": "告訴我",
+		"email_notify_submission": "感謝你，btc.us設置好之後我們會發送郵件通知"
+	},
+	"page": {
+		"index": {
+			"heading": "一個建立在比特幣之上的更好的網頁，創建你的專屬域名",
+			"sub_heading": "Decentralized names are registered on <strong>Stacks</strong> and secured by <strong>Bitcoin</strong>.",
+			"sub_heading_landing": "请留下您的电子邮件地址，以便我们通知您。我们将使用您的电子邮件地址作為聯繫方式，您的电子邮件地址将不被系統保留。",
+			"steps_title": "註冊.BTC域名的三個步驟",
+			"step1": "搜索",
+			"step1_text": "查看適用的域名",
+			"step2": "註冊",
+			"step2_text": "Register with a decentralized Stacks account in a few clicks.",
+			"step3": "管理",
+			"step3_text": "Manage and self-custody your .BTC domains all in one place.",
+			"block_title": "BTC—STX連接",
+			"block_intro": "Stacks brings scalable transactions and expressive smart contracts to Bitcoin, thereby leveraging the power of the most secure blockchain in the world.",
+			"block_text": ".BTC domains are registered via the Blockchain Name System (BNS), a decentralized name registry that runs as a dapp on the Stacks chain.",
+			"block_link_text": "更多信息请访问stacks.co",
+			"metaverse_title": "加入比特幣運動",
+			"metaverse_text": "由比特币保护的分散化域名。名称會被固定到比特币区块链當中。",
+			"faq_title": "常見問答",
+			"faq": [
+				{
+				"question": "創建域名的费用是多少？",
+				"answer": "域名花費只有2 STX（≈ {$domain_fiat_price}）每五年更新。"
+				},
+				{
+				"question": "如何使用新域名吗？",
+				"answer": "You can use your .BTC name to sign into hundreds of pre-existing decentralized apps and to send and receive STX. They also function much like traditional domain names. Compatibility via a web bridge with the DNS system of web 2.0 allows you to use a .BTC name for a business or personal site, however you'd like."
+				},
+				{
+				"question": "它是如何運行的？",
+				"answer": ".BTC names are registered by sending a transaction to the BNS smart contract on the Stacks chain. BNS is the “Blockchain Name System”, a decentralised name registration app that can be compared to its Ethereum counterpart ENS. Once the transaction has gone through it will be finalized on Bitcoin. It means that .BTC names are fundamentally under your control and resistant to seizure or censorship."
+				},
+				{
+				"question": "使用.BTC 名稱有什麼好處？",
+				"answer": "你的.BTC域名是你在互联网上完全獨立自主的空间，这是眾多比特币獨有特色的其中之一。你的.btc域是多功能的。注册完成會自动獲取访问一个STX和BTC的钱包。钥匙由你单独控制。快來注册一个的域名，創建自己獨一無二的旗帜。"
+				},
+				{
+				"question": "源代碼是如何運作的？",
+				"answer": "BNS是原始數據，可以在其存储库和栈链上直接检查。"
+				},
+				{
+				"question": "如果出現名稱丟失或者侵權行為應該怎麼辦？",
+				"answer": ".BTC names are registered on a first come, first serve basis, much like conventional domain names. However, since .BTC names are committed to the Stacks chain, there is no process to pursue a name that has been taken, other than negotiating with the owner. btc.us has no control over the domains nor the domain registration process and only functions as a gateway to the BNS smart contract. .BTC names do expire, so it is possible that a name becomes available at a later time."
+				}
+			],
+			"community_title": "加入社區"
+		},
+		"get": {
+			"step1": "登入",
+			"step2": "概述",
+			"step3": "確認",
+			"sign_in": "用Stack登入",
+			"sign_out": "登出",
+			"sign_in_required": "You need a decentralized Stacks account to purchase and manage your .btc domain. Please sign in using your Stacks ID to continue.",
+			"stacks_privacy_note": "Stack的所有帳戶均由用戶自行管理，本網頁不會對其干涉。",
+			"learn_more": "獲取更多",
+			"signed_in_as": "以...身份登入",
+			"wrong_account": "帳戶錯誤吗？",
+			"purchase_confirmation": "你將要獲得域名，請確認所有的選擇是否正確，所有的域名基於Stacks區域鏈接生成並由比特幣終結. 費用不可退。",
+			"loading": "加載中...",
+			"call_details": "調用詳情",
+			"contract": "合同",
+			"function": "功能",
+			"arguments": "參數",
+			"raw_call_data": "調用原始數據",
+			"confirm": "確認",
+			"wait_for_confirmation": "請等待交易確認。",
+			"sending_transaction": "交易發送中",
+			"stx_transaction_hash": "STX交易哈希",
+			"btc_transaction_hash": "BTC交易哈希",
+			"purchase_successful": "創立成功！現在可以管理你的新創建的域名或者創建另外一個域名。",
+			"manage": "管理名稱",
+			"claim_another": "創建另一個域名",
+			"domain_registration": "註冊域名",
+			"renewal_period_years": "{years}年份",
+			"renews_at_price": "Renews at {stx_price} STX every {years} years."
+		},
+		"manage": {
+			"sign_out": "登出",
+			"my_domains": "我的域名",
+			"no_domains": "還沒有生成域名",
+			"select_domain": "選擇一個域名進行控制",
+			"simple": "簡易的",
+			"advanced": "高級的",
+			"status": "狀態",
+			"active": "激活的",
+			"domain_redirect": "重新定向域名",
+			"email_server": "郵箱服務",
+			"edit": "修改",
+			"transfer_domain": "轉移域名",
+			"delete_domain": "刪除域名",
+			"danger_zone": "危險地帶",
+			"advanced_filter": "名稱篩選",
+			"no_records": "沒有紀錄",
+			"add_record": "添加紀錄",
+			"name": "名字",
+			"ttl": "TTL",
+			"type": "輸入",
+			"record": "紀錄"
+		}
+	},
+	"error": {
+		"404": "T網頁丟失"
+	},
+	"direction": "ltr"
+}

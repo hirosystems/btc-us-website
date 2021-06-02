@@ -1,0 +1,15 @@
+{
+	"background_color": "#000",
+	"theme_color": "#fff",
+	"name": "BTC.us",
+	"short_name": "BTC.us",
+	"display": "minimal-ui",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "favicon.svg",
+			"sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+			"type": "image/svg+xml"
+		}
+	]
+}

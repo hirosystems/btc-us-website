@@ -1,0 +1,134 @@
+{
+	"title": {
+		"index": "btc.us",
+		"terms-privacy": "Voorwaarden & Privacy",
+		"get": "Claim {domain_name}",
+		"manage": "Mijn domeinen",
+		"404": "Niet gevonden"
+	},
+	"nav": {
+		"faq": "FAQ",
+		"support": "Support",
+		"sign_in": "Log in"	
+	},
+	"footer": {
+		"terms_privacy": "Voorwaarden & Privacy",
+		"support": "Support"
+	},
+	"components": {
+		"domain_search_placeholder": "Vind je nieuwe .BTC domain",
+		"domain_search_button": "Claim",
+		"domain_available": "Beschikbaar voor 2 STX (≈ {$domain_fiat_price}) / 5 jaar",
+		"domain_unavailable": "Niet beschikbaar",
+		"domain_reserved": "Gereserveerd, ga door om te claimen",
+		"domain_too_short": "Naam is te kort",
+		"email_notify_placeholder": "Email adres",
+		"email_notify_button": "Laat me weten",
+		"email_notify_submission": "Bedankt, we sturen je een email zodra btc.us lanceert!"
+	},
+	"page": {
+		"index": {
+			"heading": "Een beter internet, gebouwd op Bitcoin. Claim je domein.",
+			"sub_heading": "Gedecentraliseerde namen worden geregistreerd op <strong>Stacks</strong> en beveiligd met <strong>Bitcoin</strong>.",
+			"sub_heading_landing": "<strong>btc.us lanceert binnenkort.</strong> Laat je email adres achter en we stellen je op de hoogte. Email adressen worden niet bewaard.",
+			"steps_title": "Registreer .BTC domainen in drie stappen",
+			"step1": "Zoek",
+			"step1_text": "Controleer of je domeinnaam beschikbaar is.",
+			"step2": "Registreer",
+			"step2_text": "Registreer je naam met een gedecentraliseerd Stacks account.",
+			"step3": "Beheer",
+			"step3_text": "Beheer je .BTC domainen op één plek.",
+			"block_title": "De BTC—STX verbinding",
+			"block_intro": "Stacks brengt schaalbare transacties en expressieve smart contracts naar Bitcoin, gebruikmakend van de meest veilige blockchain ter wereld.",
+			"block_text": ".BTC domeinen worden geregistreerd via de Blockchain Name System (BNS), een gedecentraliseerd namenregister dat fungeert als dapp op de Stacks chain.",
+			"block_link_text": "Lees meer op stacks.co",
+			"metaverse_title": "Neem deel aan de Bitcoin movement",
+			"metaverse_text": "Gedecentraliseerde domeinen beveiligd door Bitcoin. Namen zijn verankerd met de Bitcoin blockchain.",
+			"faq_title": "Veelgestelde vragen",
+			"faq": [
+				{
+				"question": "Hoeveel kost een domeinnaam?",
+				"answer": "Een domeinnaam kost 2 STX (≈ {$domain_fiat_price}) en vernieuwd iedere 5 jaar."
+				},
+				{
+				"question": "Hoe kan ik de domeinen gebruiken?",
+				"answer": "Je kunt je .BTC naam gebruiken om in te loggen op honderden bestaande gedecentraliseerde apps en om STX te ontvangen en verzenden. Ze fungeren ook als traditionele domeinnamen. Dankzij een web bridge met het DNS systeem van web 2.0 kun je de .BTC namen ook gebruiken voor een bedrijfs- of persoonlijke website."
+				},
+				{
+				"question": "Hoe werkt het?",
+				"answer": ".BTC namen worden geregistreerd door het versturen van een transactie naar het BNS smart contract op de Stacks blockchain. BNS is het “Blockstack Name System”, een gedecentraliseerde naamsregistratie app dat kan worden vergeleken met ENS op Ethereum. Zodra de transactie verwerkt is zal deze gefinaliseerd worden op Bitcoin. Dit betekend dat .BTC namen fundamenteel onder jouw beheer zijn en resistant zijn tegen censuur."
+				},
+				{
+				"question": "Wat zijn de voordelen van een .BTC naam?",
+				"answer": "Jouw .BTC naam is jouw souvereine plek op het internet, en best een mooie manier om deel te nemen aan de Bitcoin bewegeing. De naam geeft je automatisch toegang tot een STX en BTC wallet. De sleutels zijn alleen in jouw beheer."
+				},
+				{
+				"question": "Waar is de broncode?",
+				"answer": "BNS is open source en kan bekeken worden op GitHub danwel direct op de Stacks chain."
+				},
+				{
+				"question": "Wat kan ik doen als mijn naam al bezet is of als ik geloof dat iemand inbraak maakt op mijn copyright?",
+				"answer": ".BTC namen zijn geregisteerd op basis van 'wie eerst komt, wie eerst maalt', vergelijkbaar met conventionele domeinnamen. Aangezien .BTC namen verwerkt worden op de Stacks blockchain, is er geen proces om een naam die reeds geregistreerd is over te nemen, behalve doormiddel van onderhandeling met de eigenaar. btc.us heeft geen controle over de domeinnamen en fungeert slechts als een interface naar het BNS smart contract. .BTC namen verlopen, dus het is mogelijk dat een naam op een later tijdstip alsnog berschikbaar wordt."
+				}
+			],
+			"community_title": "Join de community"
+		},
+		"get": {
+			"step1": "Log in",
+			"step2": "Overzicht",
+			"step3": "Bevestiging",
+			"sign_in": "Inloggen met Stacks",
+			"sign_out": "Uitloggen",
+			"sign_in_required": "Je hebt een gedecentraliseerd Stacks account nodig om een .BTC naam te kopen en beheren. Log in met je Stacks ID om door te gaan.",
+			"stacks_privacy_note": "Een Stacks account is het fundament van een user-controlled internet. Wij beheren je account niet, deze is volledig onder jouw beheer.",
+			"learn_more": "Lees meer",
+			"signed_in_as": "Ingelogd als",
+			"wrong_account": "Ander account?",
+			"purchase_confirmation": "Je staat op het punt om de domeinnaam te kopen, controleer of alle gegevens correct zijn. Alle aankopen worden verwerkt op de Stacks blockchain en zijn onherroepelijk.",
+			"loading": "Laden...",
+			"call_details": "Call details",
+			"contract": "Contract",
+			"function": "Functie",
+			"arguments": "Argumenten",
+			"raw_call_data": "Ruwe call data",
+			"confirm": "Bevestigen",
+			"wait_for_confirmation": "Transacties worden verwerkt.",
+			"sending_transaction": "Transactie wordt verstuurd",
+			"stx_transaction_hash": "STX transactie hash",
+			"btc_transaction_hash": "BTC transactie hash",
+			"purchase_successful": "Koop succesvol! Je kunt je nieuwe .BTC nu beheren.",
+			"manage": "Naam beheren",
+			"claim_another": "Nog één kopen",
+			"domain_registration": "Domeinregistratie",
+			"renewal_period_years": "{years} jaar",
+			"renews_at_price": "Vernieuwd iedere {years} voor {stx_price} STX."
+		},
+		"manage": {
+			"sign_out": "Uitloggen",
+			"my_domains": "Mijn domainen",
+			"no_domains": "Nog geen domeinen.",
+			"select_domain": "Select een domeinnaam om te beheren.",
+			"simple": "Simpel",
+			"advanced": "Geavanceerd",
+			"status": "Status",
+			"active": "Actief",
+			"domain_redirect": "Domein redirect",
+			"email_server": "Email server",
+			"edit": "Bewerk",
+			"transfer_domain": "Domain overdragen",
+			"delete_domain": "Domain verwijderen",
+			"danger_zone": "Gevarenzone",
+			"advanced_filter": "Filter op naam",
+			"no_records": "Geen records",
+			"add_record": "Record toevoegen",
+			"name": "Naam",
+			"ttl": "TTL",
+			"type": "Type",
+			"record": "Record"
+		}
+	},
+	"error": {
+		"404": "De pagina bestaat niet, probeer het opnieuw."
+	},
+	"direction": "ltr"
+}

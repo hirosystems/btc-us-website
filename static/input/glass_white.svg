@@ -1,0 +1,13 @@
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="⌝-Playground" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Input" transform="translate(-391.000000, -171.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="Input-search" transform="translate(146.000000, 150.000000)">
+                <g id="Button" transform="translate(228.000000, 4.000000)">
+                    <g id="Icons/Glass" transform="translate(18.000000, 18.000000)">
+                        <path stroke="#FFFFFF" d="M8.75,16.875 C13.2373136,16.875 16.875,13.2373136 16.875,8.75 C16.875,4.26268641 13.2373136,0.625 8.75,0.625 C4.26268641,0.625 0.625,4.26268641 0.625,8.75 C0.625,13.2373136 4.26268641,16.875 8.75,16.875 Z M14.375,13.75 L19.6875,19.375" id="Glass"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

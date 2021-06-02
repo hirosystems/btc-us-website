@@ -1,0 +1,40 @@
+name: Build and deploy on Netlify
+
+on:
+  push:
+    branches:
+      - main
+
+# Jobs to carry out
+jobs:
+  deploy:
+    # Operating system to run job on
+    runs-on: ubuntu-latest
+
+    # Steps in job
+    steps:
+      # Get code from repo
+      - name: Checkout code
+        uses: actions/checkout@v1
+      # Install NodeJS
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+      # Run npm install and build on our code
+      - run: npm install
+      - run: npm run export
+        env:
+          NETWORK: mainnet
+          PAYMENT_API_URL: ${{ secrets.PAYMENT_API_URL }}
+          STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
+          REDIRECT_SERVICE_IP: ${{ secrets.REDIRECT_SERVICE_IP }}
+      # Deploy to Netlify using our dev secrets
+      - name: Deploy to netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=__sapper__/export --prod --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
+

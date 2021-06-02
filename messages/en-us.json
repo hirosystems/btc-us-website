@@ -1,0 +1,213 @@
+{
+	"title": {
+		"index": "btc.us",
+		"get": "Get {domain_name}",
+		"manage": "Account",
+		"success": "Purchase successful",
+		"web_bridge": "Web Bridge",
+		"404": "Missing"
+	},
+	"explorers": {
+		"stx_mainnet": "https://explorer.stacks.co/txid/{tx_hash}?chain=mainnet",
+		"stx_testnet": "https://explorer.stacks.co/txid/{tx_hash}?chain=testnet",
+		"btc_mainnet": "https://www.blockchain.com/btc/block/{block_hash}",
+		"btc_testnet": "https://www.blockchain.com/btc-testnet/block/{block_hash}"
+	},
+	"tx_status": {
+		"pending": "pending",
+		"success": "confirmed",
+		"not_found": "failed",
+		"abort_by_response": "failed",
+		"abort_by_post_condition": "failed"
+	},
+	"nav": {
+		"faq": "FAQ",
+		"support": "Support",
+		"sign_in": "Sign in",
+		"account": "Account"
+	},
+	"footer": {
+		"terms_privacy": "Terms & Privacy",
+		"support": "Support"
+	},
+	"components": {
+		"domain_search_placeholder": "Search for your new .BTC domain",
+		"domain_search_button": "Get it",
+		"domain_available": "Available for ~$5 / 5 years",
+		"domain_unavailable": "Unavailable",
+		"domain_reserved": "Reserved, continue to claim",
+		"domain_too_short": "Name is too short",
+		"domain_visit_placeholder": ".BTC domain to visit",
+		"domain_visit_button": "Visit",
+		"no_entries": "No entries",
+		"button_confirm": "Confirm",
+		"button_cancel": "Cancel",
+		"button_transfer_domain": "Transfer domain",
+		"button_transfer": "Transfer",
+		"transfer_domain_info": "You can transfer ownership of the domain \"{domain}\" to a different account. Enter the STX address of the new owner below. You cannot reverse this action.",
+		"stx_address": "STX address",
+		"transaction_id": "{symbol} transaction ID",
+		"preorder": "Preorder",
+		"register": "Register",
+		"transfer": "Transfer (in)",
+		"transfer_out": "Transfer (out)",
+		"update": "Update (latest)",
+		"stx": "Stacks",
+		"btc": "Bitcoin",
+		"usd": "US Dollars",
+		"none": "None"
+	},
+	"page": {
+		"index": {
+			"heading": "Claim your .BTC domain.",
+			"sub_heading": "Decentralized names are secured on the <strong>Bitcoin</strong> blockchain, registered by <strong>Stacks</strong>.",
+			"steps_title": "Register .BTC domains in three steps",
+			"step1": "Search",
+			"step1_text": "Check the availability of your preferred domain.",
+			"step2": "Register",
+			"step2_text": "Register with a Bitcoin connected Stacks account in just a few clicks.",
+			"step3": "Manage",
+			"step3_text": "Manage and self-custody your .BTC domains all in one place.",
+			"block_title": "Gold is a rock. Bitcoin is not a f------ rock.",
+			"block_intro": "Bitcoin has proven itself as a store of value protocol. Stacks is on a mission to prove that Bitcoin can also be the bedrock of the user owned internet. Stacks brings scalable transactions and expressive smart contracts to Bitcoin, putting Bitcoin’s $1T capital to work.",
+			"block_text": ".BTC domains are registered through a smart contract on Stacks, secured by Bitcoin. This smart contract implements a decentralized name registry written in Clarity lang. Ownership of every .BTC name is represented in a hash of the Bitcoin blockchain. Instead of spamming the bitcoin blockchain with name registrations, thousands of Stacks transactions settle in a single transaction on the bitcoin blockchain.",
+			"block_link_text": "Learn more at stacks.co",
+			"metaverse_title": "Join the Bitcoin movement",
+			"metaverse_text": "Decentralized domains secured by Bitcoin. Names are anchored to the Bitcoin blockchain.",
+			"faq_title": "Frequently asked questions",
+			"faq": [
+				{
+				"question": "How much do domains cost?",
+				"answer": "Domains cost ~$5 USD today and renew every 5 years."
+				},
+				{
+				"question": "How can I use domains?",
+				"answer": "You can use your .BTC name to sign into hundreds of pre-existing decentralized apps and to send and receive STX. They also function much like traditional domain names. Compatibility via a web bridge with the DNS system of web 2.0 allows you to use a .BTC name for a business or personal site, however you'd like."
+				},
+				{
+				"question": "How does it work?",
+				"answer": ".BTC names are registered by sending a transaction to the BNS smart contract on the Stacks chain. BNS is the “Blockchain Name System”, a decentralised name registration app that can be compared to its Ethereum counterpart ENS. Once the transaction has gone through it will be finalized on Bitcoin. It means that .BTC names are fundamentally under your control and resistant to seizure or censorship."
+				},
+				{
+				"question": "What are the benefits to using a .BTC name?",
+				"answer": "For starters, registering automatically gives you access to BTC and STX wallets. Names can be used to login to decentralized apps. You can redirect name.btc.us to your website. In the future, there can be better support for .btc resolution in browsers."
+				},
+				{
+				"question": "Where does the source code live?",
+				"answer": "BNS is open source and can be inspected in both the repository as well as on the Stacks chain directly."
+				},
+				{
+				"question": "How does the web bridge work?",
+				"answer": "The btc.us web bridge allows users to use their names as web pages. The web bridge turns btc.us into the top level domain and allows users to generate subdomains for their personal use. The web bridge is a centralized service, but .BTC names are not. In the future, there can be better support for .btc resolution in browsers. "
+				},
+				{
+				"question": "What can I do when my name is taken or I believe that someone infringes on my copyright?",
+				"answer": ".BTC names are registered on a first come, first serve basis, much like conventional domain names. However, since .BTC names are committed to the Stacks chain, there is no process to pursue a name that has been taken, other than negotiating with the owner. btc.us has no control over the domains nor the domain registration process and only functions as a gateway to the BNS smart contract. .BTC names do expire, so it is possible that a name becomes available at a later time."
+				}
+			],
+			"community_title": "Join the community"
+		},
+		"get": {
+			"step1": "Sign in",
+			"step2": "Overview",
+			"step3": "Purchase",
+			"sign_in": "Create your decentralized account",
+			"sign_out": "Sign out",
+			"sign_in_required": "You need a Bitcoin connected Stacks account to purchase and manage your .BTC domain. Please sign in to continue.",
+			"stacks_privacy_note": "A decentralized Stacks account is your first step to a user-controlled internet built on Bitcoin. We do not create nor manage your account, it is completely under your control.",
+			"already_associated": "Your account already has a name associated with it (perhaps from Stacks 1.0). Please create new account or sign in with a different account using your Stacks Web Wallet.",
+			"learn_more": "Learn more",
+			"signed_in_as": "Signed in as",
+			"wrong_account": "Wrong account?",
+			"purchase_confirmation": "You are about to purchase the domain, please make sure all details are correct. All domain purchases are committed to the Stacks chain and finalized on Bitcoin. Refunds are therefore impossible.",
+			"loading": "Loading...",
+			"call_details": "Call details",
+			"contract": "Contract",
+			"function": "Function",
+			"arguments": "Arguments",
+			"raw_call_data": "Raw call data",
+			"transaction_id": "Transaction ID",
+			"select_payment_method": "Select a payment method to continue:",
+			"buy_with_usd": "Buy with USD",
+			"buy_with_stx": "Buy with STX",
+			"buy_with_btc": "Buy with BTC",
+			"confirm": "Continue",
+			"wait_for_confirmation": "Please wait while your transactions are confirmed.",
+			"sending_transaction": "Sending transactions",
+			"stx_transaction_hash": "STX transaction hash",
+			"btc_transaction_hash": "BTC transaction hash",
+			"purchase_successful": "Purchase successful! You can now manage your new .BTC domain or purchase another one.",
+			"send_two_tx": "You need to send two transactions in order to secure your .BTC name. For maximum security, you should wait until the preorder has completed before sending the registration.",
+			"read_more": "Understand why",
+			"send_two_tx_why": "<p>Names on the Blockchain Name System are not immediately revealed because all pending registrations are visible in the <a target=\"_blank\" href=\"https://academy.binance.com/en/glossary/mempool\">mempool</a>. The mempool is a place where all new transactions go, and it is visible for everyone. It means that it is theoretically possible for someone to see your pending registration and try to grab the name before you can. A miner could, for example, ignore your pending name purchase and instead send a transaction to purchase the name for itself. A preorder does not reveal the name you intend to buy and mitigates this issue. However, if you prefer to have the name as quickly as possible and are willing to take the aforementioned risk, you can choose to send both transactions at the same time.</p>",
+			"manage": "Manage name",
+			"claim_another": "Get another",
+			"domain_registration": "Domain registration",
+			"renewal_period_years": "{years} years",
+			"renews_at_price": "Renews at {stx_price} STX every {years} years.",
+			"transactions_failed": "It looks like one or both transactions did not succeed. It is possible something went wrong while sending, or somebody else managed to register the name a little quicker.",
+			"try_again": "Start over",
+			"preorder": "Preorder",
+			"preorder_does": "reserves the name",
+			"register": "Register",
+			"register_does": "reveals it to the network"
+		},
+		"success": {
+			"body": "Your purchase was successful. Your name should appear within the next few hours, as it has to settle on the Stacks and Bitcoin blockchains. If your new domain name has not appeared after six hours, please contact us."
+		},
+		"manage": {
+			"account": "Account",
+			"sign_out": "Sign out",
+			"my_domains": "My domain",
+			"no_domains": "No domain yet. Did you just buy a domain? It might take a few hours for it to show up.",
+			"select_domain": "Select a domain to manage.",
+			"other_domains": "Looking for other domains? Sign into the respective account.",
+			"domain_transferring": "Your domain is currently being transferred. Check back soon!",
+			"transaction_history_missing": "It looks like transaction history is missing. Do you want to attempt to find it?",
+			"low_balance": "Your STX balance is low. You need STX to be able to update your name. Find where to purchase STX on <a href=\"//stacks.co\">stacks.co</a>.",
+			"simple": "Basic",
+			"advanced": "Advanced",
+			"status": "Status",
+			"active": "Active",
+			"active_until": "(until ~{date})",
+			"domain_redirect": "Website redirect",
+			"domain_redirect_footnote": "Setting a website redirect allows you to easily redirect anyone visiting your domain to any given URL. This is a centralized feature provided by btc.us for your convenience. You always retain full control over your domain.",
+			"email_server": "Email server",
+			"edit": "Edit",
+			"delete": "Remove",
+			"delete_domain_confirmation": "Are you sure you want to delete the domain \"{domain}\"? The name will be revoked and become unusable. You cannot reverse this action.",
+			"delete_record_confirm": "Are you sure you want to remove this record?",
+			"find": "Find",
+			"add_profile_record": "Add profile record",
+			"save_changes": "Save changes",
+			"transactions": "Transactions",
+			"transaction_id": "Transaction ID",
+			"transfer_domain": "Transfer domain",
+			"delete_domain": "Delete domain",
+			"danger_zone": "Danger zone",
+			"advanced_filter": "Filter by name",
+			"no_records": "No records",
+			"add_record": "Add record",
+			"name": "Name",
+			"ttl": "TTL",
+			"type": "Type",
+			"record": "Record"
+		},
+		"web_bridge": {
+			"intro": "The .BTC web bridge is a service that allows you to access .BTC names in three different ways. It means that you can browse websites that are hosted on .BTC names right from your browser, for example. The web bridge is still experimental but you can try it out today.",
+			"how_to_use": "How to use",
+			"method1": "No-setup required",
+			"method1_body": "<p>You can use the web bridge without any setup. The btc.us domain acts as a conventional domain bridge. To use it, simply append &quot;.us&quot; to any .BTC name. For example: take the name <strong>example.btc</strong>, if you want to visit it in your browser, simply go to <a href=\"http://example.btc.us\">example.btc.us</a>. Note that not every name might have a website associated with it. The owner of the name decides how the name is used.</p>",
+			"method2": "Browser configuration (DNS over HTTPS)",
+			"method2_body": "<p>If you want a more seamless experience, you can tell your browser to use the .BTC web bridge to look for domain names. By using our so-called &quot;DNS Over HTTPS&quot; service, any .BTC name can be visited directly.</p><ul><li><strong>Chrome and Brave</strong>:<br/>go to Settings &gt; Security &gt; Advanced, set 'Use secure DNS' to 'Customised' and use the following address: <code>https://ns1.btc.us/dns-query</code>.</li><li><strong>Firefox</strong>:<br/>go to Options &gt; General &gt; Network settings, enable 'Enable DNS over HTTPS' with the provider option set to 'Custom' and use the following address: <code>https://ns1.btc.us/dns-query</code>.</li></ul><p><strong>Important notice</strong>: using this configuration makes your browser resolve all domain names via the web bridge. The web bridge only handles .BTC names and will pass all other requests to Cloudflare's DNS resolver. The bridge does not log any requests.</p>",
+			"method3": "System configuration",
+			"method3_body": "<p>The web bridge exposes a DNS server which can be added to your system's network configuration. Doing so should make .BTC names available for any application. Like the DoH service, it only handles .BTC names and will pass all other requests to Cloudflare's DNS resolver. It is advised to create a so-called split-DNS setup to only use the web bridge DNS server for .BTC names.</p><p>The DNS server address:</p><ul><li><code>ns1.btc.us</code></li></ul><p>This configuration is considered advanced usage, please make sure you know what you are doing.</p>",
+			"how_it_works": "How it works",
+			"how_it_works_body": "<p>The web bridge takes all incoming names and looks them up via the Blockchain Name Service (BNS). When using the first method described above, it maps the requested sub domain to the corresponding domain name: <strong>example.btc.us</strong> becomes <strong>example.btc</strong>. If the name is found, the web bridge will respond in a manner that your browser or system can understand. It therefore seems like any ordinary domain name, even though it actually exists on the decentralized Stacks network. If you are interested in the source code, check out the GitHub repositories.</p>"
+		}
+	},
+	"error": {
+		"404": "The page you are looking for has gone missing, try again?"
+	},
+	"direction": "ltr"
+}

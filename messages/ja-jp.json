@@ -1,0 +1,134 @@
+{
+	"title": {
+		"index": "btc.us",
+		"terms-privacy": "利用規約",
+		"get": "{domain_name}を始める",
+		"manage": "マイドメイン",
+		"404": "表示できません"
+	},
+	"nav": {
+		"faq": "よくある質問",
+		"support": "サポート",
+		"sign_in": "ログイン"	
+	},
+	"footer": {
+		"terms_privacy": "利用規約",
+		"support": "サポート"
+	},
+	"components": {
+		"domain_search_placeholder": "新しい.BTCドメインを作成する",
+		"domain_search_button": "作成",
+		"domain_available": "2STX(≈ {$domain_fiat_price})(5年)で作成する",
+		"domain_unavailable": "既にこのドメインは使用されています",
+		"domain_reserved": "このドメイン名は申込済みです。本人確認をしてください。",
+		"domain_too_short": "ドメイン名が短すぎます",
+		"email_notify_placeholder": "Emailを入力",
+		"email_notify_button": "登録",
+		"email_notify_submission": "ありがとうございます！btc.usサービスが正式に開始しましたら確認のメールを送信いたします！"
+	},
+	"page": {
+		"index": {
+			"heading": "より良いインターネットを、ビットコインと共に。貴方だけのドメイン名を作成しましょう。",
+			"sub_heading": "分散化されたドメイン名は<strong>Stacks</strong>に登録され、<strong>Bitcoin</strong>によって保護されます.",
+			"sub_heading_landing": "<strong>btc.usサービスは間も無く開始します。</strong> メールアドレスを登録をしますと、サービスが開始された時にメールにてお知らせを受け取ることができます。登録されたメールアドレスはこのサービスの為だけに使用され、今後保持されることはありません。",
+			"steps_title": ".BTCドメインは3つのステップで作成することが出来ます。",
+			"step1": "検索",
+			"step1_text": "ドメイン名が使用可能か確認",
+			"step2": "登録",
+			"step2_text": "分散型Stacksアカウントを登録します。登録は数クリックで完了します。",
+			"step3": "管理",
+			"step3_text": ".BTCドメインはアカウント内で自分自身で管理することができます。",
+			"block_title": "BTCとSTXの結び付き",
+			"block_intro": "Stacks brings scalable transactions and expressive smart contracts to Bitcoin, thereby leveraging the power of the most secure blockchain in the world.",
+			"block_text": ".BTC domains are registered via the Blockchain Name System (BNS), a decentralized name registry that runs as a dapp on the Stacks chain.",
+			"block_link_text": "Learn more at stacks.co",
+			"metaverse_title": "Join the Bitcoin movement",
+			"metaverse_text": "Decentralized domains secured by Bitcoin. Names are anchored to the Bitcoin blockchain.",
+			"faq_title": "よくある質問",
+			"faq": [
+				{
+				"question": "ドメイン名はいくらで作成できますか？",
+				"answer": "各ドメイン名は2STX(≈ {$domain_fiat_price})(5年)で作成する事が出来ます。ドメイン名は5年毎に更新が必要です。"
+				},
+				{
+				"question": "どのようにドメイン名は使用できますか?",
+				"answer": "ドメイン名は既存の分散型アプリへのログインを可能にし、STXを送信・受信する事が出来ます。また、従来のドメイン名が持つ機能も保持しています。 Compatibility via a web bridge with the DNS system of web 2.0 allows you to use a .BTC name for a business or personal site, however you'd like."
+				},
+				{
+				"question": "どのような仕組みなのですか?",
+				"answer": ".BTC names are registered by sending a transaction to the BNS smart contract on the Stacks chain. BNS is the “Blockchain Name System”, a decentralised name registration app that can be compared to its Ethereum counterpart ENS. Once the transaction has gone through it will be finalized on Bitcoin. It means that .BTC names are fundamentally under your control and resistant to seizure or censorship."
+				},
+				{
+				"question": ".BTCを使用するメリットはなんですか?",
+				"answer": "Your .BTC domain is your sovereign space on the internet, and a pretty cool way to join the Bitcoin movement. Your .BTC domain is multipurpose. Registering automatically gives you access to a STX and BTC wallets. The keys are in your sole control. Fly the flag of independence by registering a decentralized domain today."
+				},
+				{
+				"question": "Where does the source code live?",
+				"answer": "BNS is open source and can be inspected in both the repository as well as on the Stacks chain directly."
+				},
+				{
+				"question": "What can I do when my name is taken or I believe that someone infringes on my copyright?",
+				"answer": ".BTC names are registered on a first come, first serve basis, much like conventional domain names. However, since .BTC names are committed to the Stacks chain, there is no process to pursue a name that has been taken, other than negotiating with the owner. btc.us has no control over the domains nor the domain registration process and only functions as a gateway to the BNS smart contract. .BTC names do expire, so it is possible that a name becomes available at a later time."
+				}
+			],
+			"community_title": "私たちのコミュニティに参加する"
+		},
+		"get": {
+			"step1": "ログイン",
+			"step2": "概要",
+			"step3": "確認",
+			"sign_in": "Stacksでログイン",
+			"sign_out": "ログアウト",
+			"sign_in_required": ".btcドメインを購入・管理する為には分散型Stacksアカウントが必要です。続けるにはStacks IDでログインしてください。",
+			"stacks_privacy_note": "A Stacks account is your foundation to a user-controlled internet. We do not create nor manage your account, it is completely under your control.",
+			"learn_more": "Learn more",
+			"signed_in_as": "Signed in as",
+			"wrong_account": "Wrong account?",
+			"purchase_confirmation": "You are about to purchase the domain, please make sure all details are correct. All domain purchases are committed to the Stacks chain and finalized on Bitcoin. Refunds are therefore impossible.",
+			"loading": "Loading...",
+			"call_details": "Call details",
+			"contract": "Contract",
+			"function": "Function",
+			"arguments": "Arguments",
+			"raw_call_data": "Raw call data",
+			"confirm": "確認",
+			"wait_for_confirmation": "Please wait while your transactions are confirmed.",
+			"sending_transaction": "トランザクションを送信",
+			"stx_transaction_hash": "STXトランザクションハッシュ",
+			"btc_transaction_hash": "BTCトランザクションハッシュ",
+			"purchase_successful": "購入が完了しました! あなたの新しい.BTCアカウントはマイページ内で管理する事が出来ます。また、別のアカウントを作成するとこが出来ます。",
+			"manage": "ドメイン名を管理",
+			"claim_another": "別のドメイン名を作成",
+			"domain_registration": "ドメイン名を登録",
+			"renewal_period_years": "{years} 年",
+			"renews_at_price": " {years}毎に{stx_price}STXで更新"
+		},
+		"manage": {
+			"sign_out": "ログアウト",
+			"my_domains": "あなたのドメイン",
+			"no_domains": "あなたのドメインはまだありません",
+			"select_domain": "ドメインを選択する",
+			"simple": "簡易メニュー",
+			"advanced": "詳細メニュー",
+			"status": "ステータス",
+			"active": "使用可能",
+			"domain_redirect": "ドメインをリダイレクト",
+			"email_server": "Emailサーバー",
+			"edit": "編集",
+			"transfer_domain": "ドメインを転送",
+			"delete_domain": "ドメインを削除",
+			"danger_zone": "Danger zone",
+			"advanced_filter": "ドメイン名で絞り込む",
+			"no_records": "記録がありません",
+			"add_record": "記録する",
+			"name": "記録名",
+			"ttl": "TTL",
+			"type": "種類",
+			"record": "記録"
+		}
+	},
+	"error": {
+		"404": "お探しのページは見つかりませんでした。更新しますか?"
+	},
+	"direction": "ltr"
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>7FCD043A-707B-46F7-A3DA-9C0999BB756B</title>
+    <g id="⌝-Playground" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Input" transform="translate(-703.000000, -172.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="Input-search" transform="translate(458.000000, 150.000000)">
+                <g id="Button" transform="translate(228.000000, 4.000000)">
+                    <g id="Icons/Buy" transform="translate(18.000000, 19.000000)">
+                        <polygon id="Path-3" points="0.625 8.0625 19.375 8.0625 16.25 17.125 3.75 17.125"></polygon>
+                        <path d="M16.25,8.0625 C15.8333333,3.27083333 13.8541667,0.875 10.3125,0.875 C6.77083333,0.875 4.79166667,3.27083333 4.375,8.0625 L16.25,8.0625 Z" id="Oval"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
