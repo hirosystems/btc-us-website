@@ -21,6 +21,6 @@
 {#if promo}
 	<a id="promo" href="//launch.btc.us" target="_blank">
 		Register a domain between <strong>June 2nd and June 6th</strong> for a chance to win
-		<strong>$100</strong>. Click here for more information.
+		<strong>100 STX</strong>. Click here for more information.
 	</a>
 {/if}
