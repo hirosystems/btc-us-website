@@ -127,6 +127,7 @@
 			"sign_out": "Sign out",
 			"sign_in_required": "You need a Bitcoin connected Stacks account to purchase and manage your .BTC domain. Please sign in to continue.",
 			"stacks_privacy_note": "A decentralized Stacks account is your first step to a user-controlled internet built on Bitcoin. We do not create nor manage your account, it is completely under your control.",
+			"no_longer_available": "This name is no longer available. If you purchased this domain, then please wait for it to be confirmed on the network and check back later.",
 			"already_processing": "A name purchase for your current account is already processing. You can only own one name per account. Please make a new account in the Stacks Web Extension and try again.",
 			"already_associated": "Your account already has a name associated with it (perhaps from Stacks 1.0). Please create new account or sign in with a different account using your Stacks Web Wallet.",
 			"learn_more": "Learn more",

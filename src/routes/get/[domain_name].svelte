@@ -2,7 +2,7 @@
 	import {stores,goto} from '@sapper/app';
 	import {get} from 'svelte/store';
 	
-	import {address_name,DOMAIN_NAMESPACE,DOMAIN_COST_STX,DOMAIN_RENEWAL_PERIOD_YEARS} from '../../lib/nameservice';
+	import {address_name,available as name_available,DOMAIN_NAMESPACE,DOMAIN_COST_STX,DOMAIN_RENEWAL_PERIOD_YEARS} from '../../lib/nameservice';
 	import {
 		domain_purchase_prepare,
 		domain_purchase_preorder,
@@ -92,7 +92,13 @@
 			if (pending_status && pending_status.preorder)
 				confirm('stx');
 			else
-				step = 2;
+				{
+				const available = name_available(domain_name);
+				if (available)
+					step = 2;
+				else
+					step = -3;
+				}
 			}
 		}
 
@@ -287,7 +293,9 @@
 </article>
 <article class="columns">
 	<section>
-		{#if step === -2}
+		{#if step === -3}
+			<p>{$t('page.get.no_longer_available')}</p>
+		{:else if step === -2}
 			<p>{$t('page.get.already_processing')}</p>
 			<p><a href="/sign-out" class="button right" on:click|preventDefault={() => {sign_out();step = 1;}}>{$t('page.get.sign_out')}</a></p>
 		{:else if step === -1}
