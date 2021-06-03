@@ -93,7 +93,7 @@
 				confirm('stx');
 			else
 				{
-				const available = name_available(domain_name);
+				const available = await name_available(domain_name);
 				if (available)
 					step = 2;
 				else
