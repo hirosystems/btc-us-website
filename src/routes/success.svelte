@@ -48,7 +48,7 @@
 			<div class="pending"><Loading/> <p>Please wait for the transactions to appear.</p></div>
 		{:else}
 			{#if status}
-				{#each Object.entries(status) as [key,value]}
+				{#each Object.entries(status).filter(([key]) => ['preorder','register','transfer'].includes(key)) as [key,value]}
 					<h2>{$t(`components.${key}`)}</h2>
 					{#if value.txid}
 						<TransactionHash tx_hash={value.txid}/>
