@@ -334,6 +334,7 @@
 					</label>
 				{/each}
 			</div>
+			<p>Fiat and BTC payment options temporarily disabled, get <a target="_blank" href="https://coinmarketcap.com/currencies/stacks/markets/">Stacks</a>.</p>
 			<div class="button" on:click={confirm}>{$t('page.get.confirm')}</div>
 		{:else if step === 3}
 			{#await purchase_status}
