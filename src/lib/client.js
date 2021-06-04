@@ -64,7 +64,8 @@ export async function domain_status(domain)
 			status = {
 				preorder: {txid: api_status.preorder_txid},
 				register: {txid: api_status.register_txid},
-				transfer: {txid: api_status.transfer_txid}
+				transfer: {txid: api_status.transfer_txid},
+				_api: true
 				};
 			if (status.transfer.txid)
 				json_safe(file,status);

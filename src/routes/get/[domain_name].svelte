@@ -89,7 +89,7 @@
 		else
 			{
 			const pending_status = await domain_status(domain_name);
-			if (pending_status && pending_status.preorder)
+			if (pending_status && pending_status.preorder && !pending_status._api)
 				confirm('stx');
 			else
 				{
