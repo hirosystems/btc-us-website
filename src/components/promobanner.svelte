@@ -16,11 +16,10 @@
 </style>
 <script>
 	let now = +new Date();
-	let promo = now < 1623049140000; //  June 6th 23:59 GMT
+	let promo = true;//now < 1623049140000; //  June 6th 23:59 GMT
 </script>
 {#if promo}
-	<a id="promo" href="//launch.btc.us" target="_blank">
-		Register a domain between <strong>June 2nd and June 6th</strong> for a chance to win
-		<strong>100 STX</strong>. Click here for more information.
+	<a id="promo" href="https://forum.stacks.org/t/btc-domains-are-live/12065/3" target="_blank">
+		Update on network traffic and delays: click here to read the forum post.
 	</a>
 {/if}
