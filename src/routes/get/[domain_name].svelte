@@ -365,7 +365,7 @@
 				{:else if $transactions_failed.length}
 					<p>{$t('page.get.transactions_failed')}</p>
 					<div class="button end" on:click={try_again}>{$t('page.get.try_again')}</div>
-				{:else if $transactions_succeeded.length}
+				{:else if $transactions_succeeded.length == 2}
 					<p>{$t('page.get.purchase_successful')}</p>
 				{/if}
 			{/if}

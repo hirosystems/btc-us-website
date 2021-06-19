@@ -68,7 +68,7 @@ export function succeeded(stores)
 
 export function failed(stores)
 	{
-	return filter(stores,$tx => $tx && ($tx.tx_status.includes('abort') || $tx.tx_status === 'not_found'));
+	return filter(stores,$tx => $tx && ($tx.tx_status.includes('abort') || $tx.tx_status === 'not_found' || $tx.tx_status === 'dropped_stale_garbage_collect'));
 	}
 
 export {transaction as tx};
