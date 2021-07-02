@@ -474,7 +474,6 @@
 					{#if low_balance}
 						<p class="low_balance">{@html $t('page.manage.low_balance')}</p>
 					{/if}
-					<a href="https://twitter.com/Stacks/status/1400114990464606208" class="promo">Fly the Bitcoin flag by updating your Twitter display name to <strong>{selected}</strong> for a chance to win $1000 in BTC from the Stacks Foundation. Click here for more info.</a>
 					<table class="simple">
 						<tr>
 							<th>{$t('page.manage.status')}</th>

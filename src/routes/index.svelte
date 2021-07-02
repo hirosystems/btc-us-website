@@ -2,7 +2,6 @@
 	import {goto} from '@sapper/app';
 	import DomainSearchField from '../components/domainsearchfield.svelte';
 	import Accordion from '../components/accordion.svelte';
-	import PromoBanner from '../components/promobanner.svelte';
 	import {t,format} from '../lib/i18n';
 	import {domain_fiat_price} from '../lib/utils';
 	import {media} from '../lib/media';
@@ -93,7 +92,6 @@
 </svelte:head>
 <header>
 	<div>
-		<PromoBanner/>
 		<h1>{$t('page.index.heading')}</h1>
 		<DomainSearchField small={$width_705} on:submit={result => result.detail.available && goto('/get/'+result.detail.name+'.btc')}/>
 		<p>{@html $t('page.index.sub_heading')}</p>

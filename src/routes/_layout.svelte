@@ -10,7 +10,6 @@
 	import {stores} from '@sapper/app';
 	import Nav from '../components/nav.svelte';
 	import Footer from '../components/footer.svelte';
-	import PromoBanner from '../components/promobanner.svelte';
 	import {locale,t} from '../lib/i18n';
 	export let segment;
 	
@@ -22,9 +21,6 @@
 	<title>{$t('title.'+(segment||'index'),{default:''})}</title>
 </svelte:head>
 <main class:front={!segment && !$page.error}>
-	{#if segment}
-		<PromoBanner/>
-	{/if}
 	<slot/>
 </main>
 <Footer/>
