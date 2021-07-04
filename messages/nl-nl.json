@@ -1,15 +1,30 @@
 {
 	"title": {
 		"index": "btc.us",
-		"terms-privacy": "Voorwaarden & Privacy",
 		"get": "Claim {domain_name}",
-		"manage": "Mijn domeinen",
+		"manage": "Beheer", 
+		"success": "Aankoop succesvol",
+		"web_bridge": "Web Bridge", 
 		"404": "Niet gevonden"
+	},
+	"explorers": {
+		"stx_mainnet": "https://explorer.stacks.co/txid/{tx_hash}?chain=mainnet",
+		"stx_testnet": "https://explorer.stacks.co/txid/{tx_hash}?chain=testnet",
+		"btc_mainnet": "https://www.blockchain.com/btc/block/{block_hash}",
+		"btc_testnet": "https://www.blockchain.com/btc-testnet/block/{block_hash}"
+	},
+	"tx_status": {
+		"pending": "wordt verwerkt",
+		"success": "transactie bevestigd",
+		"not_found": "mislukt",
+		"abort_by_response": "mislukt",
+		"abort_by_post_condition": "mislukt"
 	},
 	"nav": {
 		"faq": "FAQ",
 		"support": "Support",
-		"sign_in": "Log in"	
+		"sign_in": "Log in",
+		"account": "Account"
 	},
 	"footer": {
 		"terms_privacy": "Voorwaarden & Privacy",
@@ -22,22 +37,37 @@
 		"domain_unavailable": "Niet beschikbaar",
 		"domain_reserved": "Gereserveerd, ga door om te claimen",
 		"domain_too_short": "Naam is te kort",
-		"email_notify_placeholder": "Email adres",
-		"email_notify_button": "Laat me weten",
-		"email_notify_submission": "Bedankt, we sturen je een email zodra btc.us lanceert!"
+		"domain_visit_placeholder": ".BTC domein om te bezoeken",
+		"domain_visit_button": "Bezoeken",
+		"no_entries": "Geen inzendingen",
+		"button_confirm": "Bevestigen",
+		"button_cancel": "Annuleren",
+		"button_transfer_domain": "Domain versturen",
+		"button_transfer": "Versturen",
+		"transfer_domain_info": "U kunt dit domein \"{domain}\" naar een andere account versturen. Vul hieronder het STX-adres in van de nieuwe eigenaar. Deze actie kan niet ongedaan worden gemaakt.",
+		"stx_address": "STX-adres",
+		"transaction_id": "{symbol} transactie ID",
+		"preorder": "Preorder", 
+		"register": "Registreren",
+		"transfer": "Verzenden (in)",
+		"transfer_out": "Verzenden (uit)",
+		"update": "Update (recentste)",
+		"stx": "Stacks",
+		"btc": "Bitcoin",
+		"usd": "Amerikaanse Dollars",
+		"none": "None"		
 	},
 	"page": {
 		"index": {
-			"heading": "Een beter internet, gebouwd op Bitcoin. Claim je domein.",
+			"heading": "Claim je .BTC domein.",
 			"sub_heading": "Gedecentraliseerde namen worden geregistreerd op <strong>Stacks</strong> en beveiligd met <strong>Bitcoin</strong>.",
-			"sub_heading_landing": "<strong>btc.us lanceert binnenkort.</strong> Laat je email adres achter en we stellen je op de hoogte. Email adressen worden niet bewaard.",
 			"steps_title": "Registreer .BTC domainen in drie stappen",
 			"step1": "Zoek",
 			"step1_text": "Controleer of je domeinnaam beschikbaar is.",
 			"step2": "Registreer",
 			"step2_text": "Registreer je naam met een gedecentraliseerd Stacks account.",
 			"step3": "Beheer",
-			"step3_text": "Beheer je .BTC domainen op één plek.",
+			"step3_text": "Beheer je .BTC domein op één plek.",
 			"block_title": "De BTC—STX verbinding",
 			"block_intro": "Stacks brengt schaalbare transacties en expressieve smart contracts naar Bitcoin, gebruikmakend van de meest veilige blockchain ter wereld.",
 			"block_text": ".BTC domeinen worden geregistreerd via de Blockchain Name System (BNS), een gedecentraliseerd namenregister dat fungeert als dapp op de Stacks chain.",
@@ -59,12 +89,28 @@
 				"answer": ".BTC namen worden geregistreerd door het versturen van een transactie naar het BNS smart contract op de Stacks blockchain. BNS is het “Blockstack Name System”, een gedecentraliseerde naamsregistratie app dat kan worden vergeleken met ENS op Ethereum. Zodra de transactie verwerkt is zal deze gefinaliseerd worden op Bitcoin. Dit betekend dat .BTC namen fundamenteel onder jouw beheer zijn en resistant zijn tegen censuur."
 				},
 				{
+				"question": "Hoeveel domeinen kan ik registreren?",
+				"answer": "Dat is afhankelijk van je portemonee! Let wel: er is een maximum van een domeinnaam per publieke Stacks key. Dit is een technische limiet. Als u er toch in bent geslaagd om meer dan een naam te registreren, bijv met extra tabs open waardoor u toch problemen ervaart bekijk dan de frequent gestelde vragen hieronder."
+				},
+				{				
+				"question": "Ik heb geprobeerd om meerdere domainnamen te registeren op een account door met USD of BTC te betalen, wat kan ik nu doen?,
+				"answer": "Elk account kan slechts een domain bezitten, aanvullende aankopen zullen daardoor falen. Als u met USD heeft betaald zal het automatisch teruggestort worden, dat kan een dag duren. Als ue met BTC heeft betaald, neem dan contact met ons op zodat we een terugstorting kunnen regelen."
+				},
+				{
+				"question": "Ik heb geprobeerd om meerdere domainnamen te registeren op een account door met STX te betalen, wat kan ik nu doen?",
+				"answer": "Het is mogelijk dat u meerdere preorders heeft geplaatst terwijl uw registratie werd verwerkt. Als dat is gebeurd kunt u het geregistreerde domein naar een ander Stacks address sturen om daarna het volgende domain alsnog volledig te registreren."
+				},
+				{
 				"question": "Wat zijn de voordelen van een .BTC naam?",
 				"answer": "Jouw .BTC naam is jouw souvereine plek op het internet, en best een mooie manier om deel te nemen aan de Bitcoin bewegeing. De naam geeft je automatisch toegang tot een STX en BTC wallet. De sleutels zijn alleen in jouw beheer."
 				},
 				{
 				"question": "Waar is de broncode?",
 				"answer": "BNS is open source en kan bekeken worden op GitHub danwel direct op de Stacks chain."
+				},
+				{
+				"question": "Hoe werkt de 'Web Bridge'?",
+				"answer": "De btc.us web bridge maakt het mogelijk voor gebruikers om de domainnaam als webpagina te gebruiken. De Web Bridge maakt van btc.us het top level van het domain en de geregistreerde naam wordt het subdomain voor persoonlijk gebruik. De Web Bridge is een gecentraliseerde service, maar .BTC namen zijn dat niet. In de toekomst kan er betere support zijn voor het werken met .BTC in browsers."
 				},
 				{
 				"question": "Wat kan ik doen als mijn naam al bezet is of als ik geloof dat iemand inbraak maakt op mijn copyright?",
@@ -81,6 +127,9 @@
 			"sign_out": "Uitloggen",
 			"sign_in_required": "Je hebt een gedecentraliseerd Stacks account nodig om een .BTC naam te kopen en beheren. Log in met je Stacks ID om door te gaan.",
 			"stacks_privacy_note": "Een Stacks account is het fundament van een user-controlled internet. Wij beheren je account niet, deze is volledig onder jouw beheer.",
+			"no_longer_available": "Deze naam is niet meer beschikbaar. Als je dit domein hebt gekocht, wacht op bevestiging van de transactie op het netwerk en controleer het later nogmaals.",
+			"already_processing": "Er wordt al een aankoop verwerkt op je huidige account. U kunt maar een naam per account bezitten. Maak een nieuwe account aan in de Stacks Web Extensie en probeer het opnieuw.",
+			"already_associated": "Je account heeft al een naam (wellicht van Stacks 1.0). Creeer een nieuwe account of log in met een andere account doormiddel van de Stacks Web Extensie.",
 			"learn_more": "Lees meer",
 			"signed_in_as": "Ingelogd als",
 			"wrong_account": "Ander account?",
@@ -91,40 +140,84 @@
 			"function": "Functie",
 			"arguments": "Argumenten",
 			"raw_call_data": "Ruwe call data",
+			"transaction_id": "Transactie ID",
+			"select_payment_method": "Selecteer een betaalmethode om verder te gaan:",
+			"buy_with_usd": "Koop met Amerikaanse dollars",
+			"buy_with_stx": "Koop met STX",
+			"buy_with_btc": "Koop met BTC",
 			"confirm": "Bevestigen",
 			"wait_for_confirmation": "Transacties worden verwerkt.",
 			"sending_transaction": "Transactie wordt verstuurd",
 			"stx_transaction_hash": "STX transactie hash",
 			"btc_transaction_hash": "BTC transactie hash",
 			"purchase_successful": "Koop succesvol! Je kunt je nieuwe .BTC nu beheren.",
+			"send_two_tx": "Je moet twee transacties versturen om je .BTC naam te registreren. Voor maximale veiligheid wacht je tot de preorder is bevestigd voordat je de registratietransactie stuurt.",
+			"read_more": "Begrijp waarom",
+			"send_two_tx_why": "<p>Namen op 'Blockchain Name System' worden niet meteen zichtbaar gemaakt omdat alle aanstaande registraties zichtbaar zijn in de <a target=\"_blank\" href=\"https://academy.binance.com/en/glossary/mempool\">mempool</a>. De 'mempool' is een plaats waar alle nieuwe transacties naartoe gaan en die zijn zichtbaar voor iedereen. Dat betekend dat het theoretisch mogelijk is om de aanstaande registratie te zien en die te registreren voordat jij dat kan doen. Een miner zou bijvoorbeeld de ene transactie in de mempool kunnen negeren terwijl het een andere transactie wel bevestigd om de naam zelf te registreren. Een preorder verhult de naam die je wil gaan registreren waardoor dit probleem wordt vermeden. Als je echter de naam zo snel mogelijk wil hebben kun je er echter voor keizen om het eerder beschreven risico te nemen door beide transacties gelijktijdig te sturen.</p>",
 			"manage": "Naam beheren",
 			"claim_another": "Nog één kopen",
 			"domain_registration": "Domeinregistratie",
 			"renewal_period_years": "{years} jaar",
-			"renews_at_price": "Vernieuwd iedere {years} voor {stx_price} STX."
+			"renews_at_price": "Vernieuwd iedere {years} voor {stx_price} STX.",
+			"transactions_failed": "Het ziet er naar uit dat een of meer transacties niet zijn gelukt. Het is mogelijk dat er iets mis is gegaan, of iemand anders heeft de naam vlak voor jou geregistreerd.",
+			"try_again": "Start opnieuw",
+			"preorder": "Preorder",
+			"preorder_does": "reserveert de naam",
+			"register": "Registreer",
+			"register_does": "maakt de naam kenbaar aan het netwerk"
 		},
+		"success": {
+			"body": "Je aankoop was succesvol. Uw geregisteerde naam zal binnen enkele uren zichtbaar worden, omdat de transactie moet worden bevestigd op de Stacks en Bitcoin blockchain. Als uw nieuwe naam niet zichtbaar is na zes uur, neem dan contact met ons op."
+		},		
 		"manage": {
+			"account": "Account",
 			"sign_out": "Uitloggen",
-			"my_domains": "Mijn domainen",
-			"no_domains": "Nog geen domeinen.",
-			"select_domain": "Select een domeinnaam om te beheren.",
+			"my_domains": "Mijn domein",
+			"no_domains": "Nog geen domein.",
+			"select_domain": "Selecteer een domeinnaam om te beheren.",
+			"other_domains": "Zoekt u een ander domein? Log in op het respectievelijke account.",
+			"domain_transferring": "Je domein wordt momenteel verplaatst. Check later opnieuw!",
+			"transaction_history_missing": "Het lijkt erop dat uw transactiegeschiedenis ontbreekt. Wil je een poging doen die te vinden?",
+			"low_balance": "Er is onvoldoende STX saldo. Je hebt STX nodig om de naam te updaten. Vind waar u STX kunt kopen <a href=\"//stacks.co\">stacks.co</a>.",
 			"simple": "Simpel",
 			"advanced": "Geavanceerd",
 			"status": "Status",
 			"active": "Actief",
+			"active_until": "(tot ~{date})",
 			"domain_redirect": "Domein redirect",
-			"email_server": "Email server",
+			"domain_redirect_footnote": "Als je een redirect opgeeft zal een bezoeker van je domain.btc.us hier naartoe worden gestuurd. Dit is een gecentraliseerde service die door btc.us wordt geleverd voor je gemak. Je houd altijd volledige controle over je .btc domein.",
+			"email_server": "E-mail server",
 			"edit": "Bewerk",
-			"transfer_domain": "Domain overdragen",
-			"delete_domain": "Domain verwijderen",
+			"delete": "Verwijder",
+			"delete_domain_confirmation": "Weet je zeker dat je dit domein wilt verwijderen: \"{domain}\"? De naam zal worden ingetrokken en zal onbruikbaar worden. Deze actie kan niet ongedaan worden gemaakt.",
+			"delete_record_confirm": "Weet je zeker dat je deze vermelding wilt verwijderen?",
+			"find": "Vind",
+			"add_profile_record": "Voeg profiel vermelding toe",
+			"save_changes": "Veranderingen opslaan",
+			"transactions": "Transacties",
+			"transaction_id": "Transactie ID",
+			"transfer_domain": "Domein overdragen",
+			"delete_domain": "Domein verwijderen",
 			"danger_zone": "Gevarenzone",
 			"advanced_filter": "Filter op naam",
-			"no_records": "Geen records",
-			"add_record": "Record toevoegen",
+			"no_records": "Geen vermeldingen",
+			"add_record": "Vermelding toevoegen",
 			"name": "Naam",
 			"ttl": "TTL",
 			"type": "Type",
-			"record": "Record"
+			"record": "Vermelding"
+		}
+		"web_bridge": {
+			"intro": "De .BTC Web Bridge is een dienst die .BTC namen toegankelijk maakt op drie manieren. Het betekent bijvoorbeeld dat je kan browsen naar websites die gehost worden op .BTC namen. De Web Bridge is nog experimenteel, maar je kan hem vandaag al uitproberen.",
+			"how_to_use": "Hoe te gebruiken",
+			"method1": "Geen setup noodzakelijk",
+			"method1_body": "<p>De Web Bridge is te gebruiken zonder nadere instellingen. Het btc.us domein werkt als een conventionele web bridge. Om het te gebruiken hoef je alleen &quot;.us&quot; toe te voegen aan een .BTC naam. Bijvoorbeeld: de naam <strong>example.btc</strong>, als je die wil bezoeken in je browser, ga dan eenvoudigweg naar <a href=\"http://example.btc.us\">example.btc.us</a>. Merk op dat niet welke naam een website gelinked zal hebben. De bezitter van de naam beslist hoe die gebruikt wordt.</p>",
+			"method2": "Browser configuratie (DNS over HTTPS)",
+			"method2_body": "<p>Als je een naadlozere oplossing wil, kan je de browser vertellen om de .BTC Web Bridge te gebruiken. Door gebruik te maken van zogenaamde &quot;DNS Over HTTPS&quot; dienst, any .BTC naam kan dan direct worden bezocht. </p><ul><li><strong>Chrome en Brave</strong>:<br/>ga naar Instellingen &gt; Security &gt; Advanced, stel 'Use secure DNS' in op 'Customised' en gebruik het volgende: <code>https://ns1.btc.us/dns-query</code>.</li><li><strong>Firefox</strong>:<br/>Ga naar Options &gt; General &gt; Network settings, activeer 'Enable DNS over HTTPS' met de provider optie ingesteld als 'Custom' en gebruik het volgende adres: <code>https://ns1.btc.us/dns-query</code>.</li></ul><p><strong>Belangrijke mededeling</strong>: het gebruik van deze configuratie zorgt ervoor dat alle namen via deze web bridge verlopen. De Web Bridge neemt alleen .BTC namen in behandeling alle andere namen worden afgehandeld via Cloudflare's DNS resolver. De bridge logt geen verzoeken.</p>",
+			"method3": "Systeem configuratie",
+			"method3_body": "<p>De Web Bridge maakt een DNS server beschikbaar die kan worden opgenomen in de eigen netwerkconfiguratie. Door dat te doen worden .BTC namen, als het goed is, beschikbaar in alle applicaties. Zoals optie 2 (DoH) worden alleen .BTC namen in behandeling genomen en andere verzoeken worden afgehandeld door Cloudflare's DNS resolver. Het advies is om een zogenaamde 'split-DNS setup' te gebruiken waarbij de Web Bridge DNS server alleen wordt gebruikt voor .BTC namen.</p><p>Het DNS server adres:</p><ul><li><code>ns1.btc.us</code></li></ul><p>Deze configuratie wordt gezien als geavanceerd gebruik. Het advies is om dit alleen te gebruiken met kennis van zaken.</p>",
+			"how_it_works": "Hoe het werkt",
+			"how_it_works_body": "<p>De Web Bridge raadpleegt de Blockchain Name Service (BNS) voor alle binnenkomende namen. Bij gebruik van de eerste methode zal het verzochte subdomein worden gekoppeld aan de corresponderende domein naam: <strong>example.btc.us</strong> becomes <strong>example.btc</strong>. Als de naam gevonden wordt, zal de Web Bridge een reactie sturen die de browser begrijpt. Het ziet er daardoor uit als een normaal domein ondanks dat het bestaat op het gedecentraliseerde Stacks netwerk. Als je geinteresseerd bent in de broncode, check dan de GitHub repo.</p>"
 		}
 	},
 	"error": {
