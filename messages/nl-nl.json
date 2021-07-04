@@ -178,7 +178,7 @@
 			"other_domains": "Zoekt u een ander domein? Log in op het respectievelijke account.",
 			"domain_transferring": "Je domein wordt momenteel verplaatst. Check later opnieuw!",
 			"transaction_history_missing": "Het lijkt erop dat uw transactiegeschiedenis ontbreekt. Wil je een poging doen die te vinden?",
-			"low_balance": "Er is onvoldoende STX saldo. Je hebt STX nodig om de naam te updaten. Vind waar u STX kunt kopen <a href=\"//stacks.co\">stacks.co</a>.", //later replace with service for small STX buys? https://github.com/stacksgov/Stacks-Grants/issues/137
+			"low_balance": "Er is onvoldoende STX saldo. Je hebt STX nodig om de naam te updaten. Vind waar u STX kunt kopen <a href=\"//stacks.co\">stacks.co</a>.",
 			"simple": "Simpel",
 			"advanced": "Geavanceerd",
 			"status": "Status",
