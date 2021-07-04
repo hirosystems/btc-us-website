@@ -2,9 +2,9 @@
 	"title": {
 		"index": "btc.us",
 		"get": "Claim {domain_name}",
-		"manage": "Beheer", //or "Mijn Domain" (singular)
+		"manage": "Beheer", 
 		"success": "Aankoop succesvol",
-		"web_bridge": "Web Bridge", //soortnaam, kan ook zo?
+		"web_bridge": "Web Bridge", 
 		"404": "Niet gevonden"
 	},
 	"explorers": {
@@ -47,7 +47,7 @@
 		"transfer_domain_info": "U kunt dit domein \"{domain}\" naar een andere account versturen. Vul hieronder het STX-adres in van de nieuwe eigenaar. Deze actie kan niet ongedaan worden gemaakt.",
 		"stx_address": "STX-adres",
 		"transaction_id": "{symbol} transactie ID",
-		"preorder": "Preorder", //BNS jargon didn't translate
+		"preorder": "Preorder", 
 		"register": "Registreren",
 		"transfer": "Verzenden (in)",
 		"transfer_out": "Verzenden (uit)",
