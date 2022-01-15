@@ -93,7 +93,7 @@
 <header>
 	<div>
 		<h1>{$t('page.index.heading')}</h1>
-		<DomainSearchField small={$width_705} on:submit={result => result.detail.available && goto('/get/'+result.detail.name+'.btc')}/>
+		<DomainSearchField small={$width_705} on:submit={result => result.detail.available && goto('/get/'+result.detail.name)}/>
 		<p>{@html $t('page.index.sub_heading')}</p>
 	</div>
 </header>

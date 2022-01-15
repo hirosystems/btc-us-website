@@ -482,9 +482,11 @@
 									<Loading/>
 								{:then resolve}
 									<span class="status active">{$t('page.manage.active')}</span>
-									{#await block_height_timestamp(resolve['lease-ending-at'].value.value) then timestamp}
-										{$t('page.manage.active_until',{values:{date:format_date(timestamp)}})}
-									{/await}
+									{#if resolve['lease-ending-at'] && resolve['lease-ending-at'].value}
+										{#await block_height_timestamp(resolve['lease-ending-at'].value.value) then timestamp}
+											{$t('page.manage.active_until',{values:{date:format_date(timestamp)}})}
+										{/await}
+									{/if}
 								{/await}
 							</td>
 							<td></td>

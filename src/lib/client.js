@@ -1,6 +1,7 @@
 import {
 	available,
 	clean_check_domain,
+	get_namespace,
 	generate_zonefile_stub,
 	preorder_name_hash,
 	preorder,
@@ -9,7 +10,6 @@ import {
 	owns,
 	BNS_CONTRACT_ADDRESS,
 	BNS_CONTRACT_NAME,
-	DOMAIN_NAMESPACE,
 	transfer} from './nameservice';
 import {json, json_safe, delete_file_safe, stacks_session} from '../session';
 import {
@@ -48,17 +48,17 @@ export async function get_base_chain_block_hash(transaction_id)
 
 function status_file_name(domain)
 	{
+	domain = clean_check_domain(domain);
 	return `status_${domain}.json`;
 	}
 
 export async function domain_status(domain)
 	{
-	domain = clean_check_domain(domain);
 	const file = status_file_name(domain);
 	let status = await json_safe(file);
 	if (!status)
 		{
-		let api_status = await fetch_api_domain_status(domain);
+		let api_status = await fetch_api_domain_status(clean_check_domain(domain));
 		if (api_status && api_status.domain)
 			{
 			status = {
@@ -78,6 +78,7 @@ export async function domain_status(domain)
 
 export async function domain_status_from_tx_history_chunk(domain,address,limit,offset,status)
 	{
+	const namespace = get_namespace(domain);
 	domain = clean_check_domain(domain);
 	const transactions = await get_address_transactions(address,limit,offset);
 	if (!transactions.length)
@@ -93,9 +94,9 @@ export async function domain_status_from_tx_history_chunk(domain,address,limit,o
 		if (!status.register && tx.contract_call.function_name === 'name-register')
 			{
 			const [namespace_arg,name_arg,salt_arg] = tx.contract_call.function_args;
-			const namespace = Buffer.from(namespace_arg.repr.substr(2),'hex').toString('ascii');
+			const namespaceAscii = Buffer.from(namespace_arg.repr.substr(2),'hex').toString('ascii');
 			const name = Buffer.from(name_arg.repr.substr(2),'hex').toString('ascii');
-			if (`${name}.${namespace}` !== `${domain}.${DOMAIN_NAMESPACE}`)
+			if (`${name}.${namespaceAscii}` !== `${domain}.${namespace}`)
 				continue;
 			status.register = {txid: tx.tx_id};
 			status.salt = Buffer.from(salt_arg.repr.substr(2),'hex').toString('binary');
@@ -103,7 +104,7 @@ export async function domain_status_from_tx_history_chunk(domain,address,limit,o
 		if (status.register && !status.preorder && tx.contract_call.function_name === 'name-preorder') // find the first successful name-preorder after name-register.
 			{
 			const hash = Buffer.from(tx.contract_call.function_args[0].repr.substr(2),'hex');
-			const expected_hash = await preorder_name_hash(`${domain}.${DOMAIN_NAMESPACE}`,Buffer.from(status.salt,'binary'));
+			const expected_hash = await preorder_name_hash(`${domain}.${namespace}`,Buffer.from(status.salt,'binary'));
 			if (!hash.equals(expected_hash))
 				continue;
 			status.preorder = {txid: tx.tx_id};
@@ -119,6 +120,7 @@ export async function domain_status_from_tx_history_chunk(domain,address,limit,o
 
 export async function domain_transfer_status_from_nft_events(domain,address,limit,offset,status)
 	{
+	const namespace = get_namespace(domain);
 	domain = clean_check_domain(domain);
 	const events = await get_address_nft_events(address,limit,offset);
 	if (!events)
@@ -132,7 +134,7 @@ export async function domain_transfer_status_from_nft_events(domain,address,limi
 		if (event.recipient === address && event.asset_identifier === asset_identifier)
 			{
 			const tuple = deserializeCVHex(event.value.hex);
-			if (tuple && tuple.data.name.buffer.toString('ascii') === domain && tuple.data.namespace.buffer.toString('ascii') === DOMAIN_NAMESPACE)
+			if (tuple && tuple.data.name.buffer.toString('ascii') === domain && tuple.data.namespace.buffer.toString('ascii') === namespace)
 				{
 				status.transfer = {txid: event.tx_id};
 				break;
@@ -172,7 +174,6 @@ export async function domain_status_from_tx_history(domain,address)
 
 export async function domain_purchase_prepare(domain)
 	{
-	domain = clean_check_domain(domain);
 	if (!await available(domain))
 		return false;
 	const status_file = status_file_name(domain);
@@ -187,7 +188,6 @@ export async function domain_purchase_prepare(domain)
 
 export async function domain_purchase_preorder(domain)
 	{
-	domain = clean_check_domain(domain);
 	const status_file = status_file_name(domain);
 	let status = await json_safe(status_file);
 	if (status && status.step === STATUS_NEW)
@@ -204,7 +204,6 @@ export async function domain_purchase_preorder(domain)
 
 export async function domain_purchase_register(domain)
 	{
-	domain = clean_check_domain(domain);
 	const status_file = status_file_name(domain);
 	let status = await json_safe(status_file);
 	if (status.step === STATUS_PREORDER)
@@ -222,7 +221,6 @@ export async function domain_purchase_register(domain)
 
 export async function domain_transfer(domain,new_owner)
 	{
-	domain = clean_check_domain(domain);
 	if (!(await owns(domain)))
 		return false;
 	const status = (await domain_status(domain)) || {};
@@ -237,7 +235,6 @@ export async function domain_transfer(domain,new_owner)
 
 export async function domain_update(domain,zonefile)
 	{
-	domain = clean_check_domain(domain);
 	if (!(await owns(domain)))
 		return false;
 	const status = (await domain_status(domain)) || {};

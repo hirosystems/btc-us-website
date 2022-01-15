@@ -22,8 +22,8 @@ import {payment_api_call, fetch_zonefile, random_bytes} from './utils';
 import {stx_address,stacks_session,stacks_connect_options} from '../session';
 
 export const DOMAIN_CHARACTER_REGEX = /[^0-9a-z_+-]/;
-export const DOMAIN_VALIDITY_REGEX = /[0-9a-z_+-]{3,32}\.btc/;
-export const DOMAIN_NAMESPACE = 'btc';
+export const DOMAIN_VALIDITY_REGEX = /[0-9a-z_+-]{3,32}/;
+export const VALID_NAMESPACES = ['btc', 'stx'];
 
 export const DOMAIN_MIN_LENGTH = 3;
 export const DOMAIN_MAX_LENGTH = 32;
@@ -83,11 +83,29 @@ export function clean_check_domain(domain)
 	if (typeof domain !== 'string')
 		throw new Error('Domain is not a string');
 	domain = domain.toLowerCase();
-	if (domain.substr(-4) === '.' + DOMAIN_NAMESPACE)
-		domain = domain.substr(0,domain.length-DOMAIN_NAMESPACE.length-1);
-	if (!DOMAIN_VALIDITY_REGEX.test(domain+'.'+DOMAIN_NAMESPACE))
+	const namespace = VALID_NAMESPACES.find(n => domain.endsWith(`.${n}`));
+	if (!namespace) 
+		throw new Error('Unsupported namespace');
+	domain = domain.substr(0,domain.length-namespace.length-1);
+	if (!DOMAIN_VALIDITY_REGEX.test(domain))
 		throw new Error('Domain is invalid');
 	return domain;
+	}
+
+/**
+ * @param {string} domain 
+ * @description extracts the namespace from domain by fetching the suffix starting at 
+ * the index of '.'
+ * @returns the namespace for this domain
+ */
+export function get_namespace(domain)
+	{
+		if (typeof domain !== 'string')
+			throw new Error('Domain is not a string');
+		const indexOfDot = domain.lastIndexOf(".");
+		if (indexOfDot === -1) 
+			throw new Error('Domain has no namespace');
+		return domain.substring(indexOfDot+1);
 	}
 	
 async function contract_write(func,args,post_conditions,attachment)
@@ -139,7 +157,8 @@ async function contract_read(func,args)
 
 export async function available(domain)
 	{
-	const available = await contract_read('can-name-be-registered',[bufferCVFromString(DOMAIN_NAMESPACE),bufferCVFromString(clean_check_domain(domain))]);
+	const namespace = get_namespace(domain);
+	const available = await contract_read('can-name-be-registered',[bufferCVFromString(namespace),bufferCVFromString(clean_check_domain(domain))]);
 	if (available && process.env.PAYMENT_API_URL)
 		{
 		try
@@ -175,7 +194,8 @@ export async function owns(domain)
 
 export async function resolve(domain)
 	{
-	let result = await contract_read('name-resolve',[bufferCVFromString(DOMAIN_NAMESPACE),bufferCVFromString(clean_check_domain(domain))]);
+	const namespace = get_namespace(domain);
+	let result = await contract_read('name-resolve',[bufferCVFromString(namespace),bufferCVFromString(clean_check_domain(domain))]);
 	return result !== 2013 ? result : false;
 	}
 
@@ -210,8 +230,9 @@ export async function preorder(domain,salt)
 	if (length !== 20)
 		throw new Error('Salt should be 20 bytes.');
 	salt = Buffer.from(salt,'binary');
+	const namespace = get_namespace(domain);
 	domain = clean_check_domain(domain);
-	let domain_hash = await preorder_name_hash(`${domain}.${DOMAIN_NAMESPACE}`,salt);
+	let domain_hash = await preorder_name_hash(`${domain}.${namespace}`,salt);
 	return await contract_write('name-preorder',[bufferCVFromString(domain_hash),uintCV(DOMAIN_COST_STX)],DOMAIN_COST_STX); // + NAME_PREORDER_TX_FEE
 	}
 
@@ -224,7 +245,8 @@ export async function register(domain,salt,zonefile)
 	if (typeof zonefile === 'object')
 		zonefile = makeZoneFile(zonefile,ZONEFILE_TEMPLATE);
 	let hash = await zonefile_hash(zonefile);
-	return await contract_write('name-register',[bufferCVFromString(DOMAIN_NAMESPACE),bufferCVFromString(clean_check_domain(domain)),bufferCV(Buffer.from(salt,'binary')),bufferCVFromString(hash)],null,zonefile);
+	const namespace = get_namespace(domain);
+	return await contract_write('name-register',[bufferCVFromString(namespace),bufferCVFromString(clean_check_domain(domain)),bufferCV(Buffer.from(salt,'binary')),bufferCVFromString(hash)],null,zonefile);
 	}
 	
 export async function update(domain,zonefile)
@@ -233,12 +255,14 @@ export async function update(domain,zonefile)
 	if (typeof zonefile === 'object')
 		zonefile = makeZoneFile(zonefile,ZONEFILE_TEMPLATE);
 	let hash = await zonefile_hash(zonefile);
-	return await contract_write('name-update',[bufferCVFromString(DOMAIN_NAMESPACE),bufferCVFromString(clean_check_domain(domain)),bufferCV(hash)],null,zonefile);
+	const namespace = get_namespace(domain);
+	return await contract_write('name-update',[bufferCVFromString(namespace),bufferCVFromString(clean_check_domain(domain)),bufferCV(hash)],null,zonefile);
 	}
 
 export async function revoke(domain)
 	{
-	return await contract_write('name-revoke',[bufferCVFromString(DOMAIN_NAMESPACE),bufferCVFromString(clean_check_domain(domain))]);
+	const namespace = get_namespace(domain);
+	return await contract_write('name-revoke',[bufferCVFromString(namespace),bufferCVFromString(clean_check_domain(domain))]);
 	}
 	
 export async function transfer(domain,new_owner,zonefile)
@@ -246,15 +270,16 @@ export async function transfer(domain,new_owner,zonefile)
 	let address = stx_address();
 	if (!address)
 		throw Error('Not signed in');
+	const namespace = get_namespace(domain);
 	domain = clean_check_domain(domain);
 	if (!zonefile)
 		zonefile = '';
 	let hash = await zonefile_hash(zonefile);
-	let asset_name = tupleCV({name: bufferCVFromString(domain),namespace: bufferCVFromString(DOMAIN_NAMESPACE)});
+	let asset_name = tupleCV({name: bufferCVFromString(domain),namespace: bufferCVFromString(namespace)});
 	let asset = createAssetInfo(BNS_CONTRACT_ADDRESS,BNS_CONTRACT_NAME,'names');
 	return await contract_write(
 		'name-transfer',
-		[bufferCVFromString(DOMAIN_NAMESPACE),bufferCVFromString(domain),standardPrincipalCV(new_owner),someCV(bufferCVFromString(hash))],
+		[bufferCVFromString(namespace),bufferCVFromString(domain),standardPrincipalCV(new_owner),someCV(bufferCVFromString(hash))],
 		[makeStandardNonFungiblePostCondition(address,NonFungibleConditionCode.DoesNotOwn,asset,asset_name)],
 		zonefile
 		);
@@ -262,13 +287,15 @@ export async function transfer(domain,new_owner,zonefile)
 	
 export async function renew(domain)
 	{
-	return await contract_write('name-renewal',[bufferCVFromString(DOMAIN_NAMESPACE),bufferCVFromString(clean_check_domain(domain)),uintCV(DOMAIN_COST_STX)],DOMAIN_COST_STX,sender.public_key);
+	const namespace = get_namespace(domain);
+	return await contract_write('name-renewal',[bufferCVFromString(namespace),bufferCVFromString(clean_check_domain(domain)),uintCV(DOMAIN_COST_STX)],DOMAIN_COST_STX,sender.public_key);
 	}
 
 export function generate_zonefile_stub(domain,profile_url)
 	{
+	const namespace = get_namespace(domain);
 	domain = clean_check_domain(domain);
-	const zone_object = {$origin: `${domain}.${DOMAIN_NAMESPACE}.`, $ttl: 3600};
+	const zone_object = {$origin: `${domain}.${namespace}.`, $ttl: 3600};
 	if (profile_url)
 		zone_object.uri = [{name: "_http._tcp", priority: 10, weight: 1, target: profile_url}];
 	return zone_object;

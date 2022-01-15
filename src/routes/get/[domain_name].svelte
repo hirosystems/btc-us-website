@@ -2,7 +2,7 @@
 	import {stores,goto} from '@sapper/app';
 	import {get} from 'svelte/store';
 	
-	import {address_name,available as name_available,DOMAIN_NAMESPACE,DOMAIN_COST_STX,DOMAIN_RENEWAL_PERIOD_YEARS} from '../../lib/nameservice';
+	import {address_name,available as name_available,DOMAIN_COST_STX,DOMAIN_RENEWAL_PERIOD_YEARS} from '../../lib/nameservice';
 	import {
 		domain_purchase_prepare,
 		domain_purchase_preorder,
@@ -21,8 +21,6 @@
 	
 	const {page} = stores();
 	let domain_name = get(page).params.domain_name.toLowerCase();
-	if (domain_name.slice(-DOMAIN_NAMESPACE.length-1) !== `.${DOMAIN_NAMESPACE}`)
-		domain_name += `.${DOMAIN_NAMESPACE}`;
 	
 	let step = 0;
 	let payment_method = 'stx';
