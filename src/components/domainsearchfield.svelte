@@ -24,7 +24,9 @@
 			return;
 			}
 		searching = true;
-		let current_value = value;
+		// TODO this whole codebase is essentially hardcoded to only support .btc
+		// There should be a user-selectable namespace option
+		const current_value = value + ".btc";
 		name_available(current_value).then(result =>
 			{
 			if (!searching)
