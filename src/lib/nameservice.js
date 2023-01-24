@@ -46,11 +46,11 @@ export const ZONEFILE_RECORD_TYPES = {
 	a: {name:'',ip:''},
 	aaaa: {name:'',ip:''},
 	cname: {name:'',alias:''},
+	txt: {name:'',txt:''},
 	// We can bring these back over time:
 //	alias: {name:'',alias:''},
 //	mx: {name:'',preference:0,host:''},
 //	srv: {name:'',priority:10,weight:1,port:8080,target:''},
-//	txt: {name:'',txt:''} // See https://github.com/blockstack/stacks-blockchain-api/issues/582
 };
 
 export function valid(domain)
