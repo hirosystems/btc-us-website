@@ -8,7 +8,7 @@ export async function defineConfig(env) {
 	);
 
 	return {
-		referenceLanguage: 'en',
+		referenceLanguage: 'en-us',
 		plugins: [pluginJson({ 
 			pathPattern: './messages/{language}.json'
 		}), standardLintRules()]
